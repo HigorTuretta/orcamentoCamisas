@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+.botao{
+    height: 50px;
+    width: 250px;
+
+    background-color: rgb(64, 151, 64);
+    border: none;
+    color: white;
+    transform: all .2s initial;
+}
+
+.botao:hover{
+    background-color: green;
+    transform: scale(1.01);
+}
+.filtros {
+    background-color: gainsboro;
+    padding: 25px;
+    margin-bottom: 50px;
+}
+
+
+.credit {
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+}
+
+.HTML{
+    color: rgb(255, 126, 6);
+    font-size: 24px;
+    margin: 0 5px;
+}
+
+.JS{
+    color: yellow;
+    font-size: 24px;
+    margin: 0 5px;
+}
+.credit a{
+    color: darkcyan;
+    font-weight: bold;
+}

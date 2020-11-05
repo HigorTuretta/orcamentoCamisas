@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="imagens/camisa.png" type="image/x-icon">
+
+    <title>Orçamento</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-light bg-dark">
+            <div class="nav-item col-12" id="navbar">                
+                <p class="credit"> Made with <i class="fab fa-html5 HTML"></i> AND <i class="fab fa-js JS"></i> by <a href="https://github.com/HigorTuretta">Higor Turetta</a> </p>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="mt-5">
+                <h2 align="center">Faça seu orçamento online!</h2>
+            </div>
+
+            <!-- Sessão de filtros das camisas -->
+            <form action="#" onchange="atualiza()">
+                <div class="filtros mt-5">
+                    <div class="form-row">
+                        <div class="form-group input-group-sm col-lg-2 col-md-4 col-sm-12">
+                            <label for="txtqtd">Quantidade</label>
+                            <input type="number" class="form-control" value="1" id="txtQtd">
+                        </div>
+                        <div class="form-group  col-lg-2 col-md-2 col-sm-12">
+                            <label for="cor">Cor:</label><br>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-sm btn-secondary active">
+                                    <input type="radio" checked="checked" name="cor" id="cor1"> Branca
+                                </label>
+                                <label class="btn btn-sm btn-secondary">
+                                    <input type="radio" name="cor" id="cor2"> Cor
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-3 col-md-4 col-sm-12">
+                            <label for="inputPassword4">Gola:</label><br>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-sm btn-secondary active">
+                                    <input type="radio" id="golaV" name="options" id="golaV"> Gola V
+                                </label>
+                                <label class="btn btn-sm btn-secondary">
+                                    <input type="radio" id="golaN" name="options" checked="checked" id="golaN"> Gola
+                                    Normal
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-4 col-md-6 col-sm-12">
+                            <label for="inputPassword4">Qualidade do Tecido</label><br>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-sm btn-secondary active">
+                                    <input type="radio" checked id="normal" name="options" id="normal"> Normal(150g/m2)
+                                </label>
+                                <label class="btn btn-sm btn-secondary">
+                                    <input type="radio" id="alta" name="options" id="alta"> Alta(190g/m2)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group input-group-sm col-lg-5 col-md-6 col-sm-6">
+                            <label for="estampa">Estampa:</label>
+                            <select class="form-control" id="estampa">
+                                <option value="comEstampa">Com estampa</option>
+                                <option value="semEstampa">Sem estampa</option>
+                            </select>
+                        </div>
+                        <div class="form-group input-group-sm col-lg-5 col-md-6 col-sm-6">
+                            <label for="inputPassword4">Embalagem:</label>
+                            <select class="form-control" id="embalagem">
+                                <option value="bulk">Bulk - Sem plástico</option>
+                                <option value="unitaria">Unitária - Plástico</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- Fim filtro -->
+
+            <!-- Imagem e Resultados -->
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="border">
+                        <img src="" id="imagem" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6 col-sm-12">
+                    <div>
+                        <h5>Detalhes do pedido:</h5>
+                        <p id="rProduto">Produto:</p>
+                        <p id="rGola">Gola: </p>
+                        <p id="rEstampa">Tipo Estampa: </p>
+                        <p id="rQualidade">Qualidade: </p>
+                        <p id="rCor">Cor: </p>
+                        <p id="rEmbalagem">Embalagem: </p>
+                        <p id="rQuantidade">Quantidade: </p>
+                        <p>Total: </p>
+                        <h4 id="rTotal">R$ </h4>
+
+                        <button class="botao">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fim imagem -->
+
+        </div>
+    </main>
+    <footer class="mt-5">
+        <div>
+            <div class="barra p-1 bg-dark">
+                <nav>
+                    <div class="link text-light m-4">
+                        <h2>Objetivo do Desafio:</h2>
+                        <p>Montar uma página que exiba filtros para um orçamento de camisas, e, logo abaixo o resultado
+                            em
+                            tempo real para cada filtro selecionado.</p>
+                        <h3>Desafios Extras:</h3>
+                        <p>1. A camisa de Qualidade Alta (190g/m2) deverá acrescer o preço unitário em 12% </p>
+                        <p>2. A embalagem unitária tem um custo de 0.15 por unidade.</p>
+                        <p>3. Após o calculo do preço, há de se aplicar um desconto por quantidade,sendo:</p>
+                        <p> - Faixa 1: Acima de 1000 - desconto de 15%.</p>
+                        <p> - Faixa 2: Acima de 500 - desconto de 10%.</p>
+                        <p> - Faixa 3: Acima de 100 - desconto de 5%.</p>
+                        <hr>                       
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
